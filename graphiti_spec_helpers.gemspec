@@ -25,5 +25,8 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "actionpack", "~> 5.0"
   spec.add_development_dependency "bundler", "~> 1.11"
   spec.add_development_dependency "rake", "~> 10.0"
-  spec.add_dependency "rspec", "~> 3.11.0.pre"
+
+  %w[core expectations mocks].each do |name|
+    spec.add_runtime_dependency "rspec-#{name}", "~> 3.11.0.pre"
+  end
 end
